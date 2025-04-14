@@ -50,14 +50,6 @@ nav a:hover {
   background: rgba(145, 247, 120, 0.2);
 }
 
-/* Responsive Navigation */
-@media (max-width: 600px) {
-  nav ul li {
-    display: block;
-    margin: 10px 0;
-  }
-}
-
 /* Main Content Section */
 #main-content {
   display: flex;
@@ -65,13 +57,13 @@ nav a:hover {
   align-items: center;
   position: relative;
   flex-grow: 1;
-  flex-wrap: wrap;
-  padding: 20px;
 }
 
 .profile-container {
-  position: relative;
-  margin-bottom: 30px;
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .profile-pic {
@@ -85,8 +77,7 @@ nav a:hover {
   position: relative;
   display: inline-block;
   width: 500px;
-  max-width: 100%;
-  margin-top: 30px;
+  margin-top: 100px;
 }
 
 .main-image {
@@ -120,8 +111,10 @@ nav a:hover {
 }
 
 .right-window {
-  position: relative;
-  margin-top: 30px;
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +127,6 @@ nav a:hover {
 
 .right-image {
   width: 280px;
-  max-width: 100%;
   height: auto;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -401,48 +393,45 @@ footer p {
   font-size: 18px;
 }
 
-/* Responsive Fix for Smaller Screens */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media screen and (max-width: 768px) {
   #main-content {
     flex-direction: column;
-    padding: 10px;
+    align-items: center;
   }
 
   .profile-container,
   .window-container,
   .right-window {
-    position: relative;
-    top: unset;
-    left: unset;
-    right: unset;
+    position: static;
     transform: none;
-    margin: 20px auto;
-    text-align: center;
+    width: 90%;
+    margin-bottom: 30px;
   }
 
-  .window-text {
-    position: relative;
-    transform: none;
-    top: unset;
-    left: unset;
-    padding: 10px;
-    text-align: center;
+  .timeline {
+    flex-direction: column;
+    gap: 40px;
   }
 
-  .right-window-text,
-  .skills-logos,
-  .HTML-logo,
-  .CSS-logo {
-    position: relative;
-    top: unset;
-    left: unset;
-    transform: none;
-    margin-top: 10px;
+  .project-challenge-goal,
+  .project-drawings {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .skills-logos {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+  .usability-img.horizontal-img,
+  .usability-img.vertical-img,
+  .project-image,
+  .sketch-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  nav a,
+  .back-button,
+  body {
+    font-size: 16px;
   }
 }
