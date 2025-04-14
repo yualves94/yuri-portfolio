@@ -1,0 +1,159 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+/* Reset e base */
+body {
+  background-color: #111;
+  color: #91F778;
+  font-family: 'Source Code Pro', monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #C5ADED;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav a {
+  font-weight: 700;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #91F778;
+  border: 2px solid #91F778;
+  border-radius: 8px;
+  background: rgba(145, 247, 120, 0.2);
+}
+
+/* About Section */
+.about-me {
+  padding: 50px 20px;
+  flex: 1;
+  text-align: center;
+}
+
+.about-me h2 {
+  color: #91F778;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-image img {
+  width: 300px;
+  max-width: 90vw;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.gallery-section h3 {
+  color: #91F778;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.gallery-item img {
+  width: 250px;
+  max-width: 90vw;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Back Button */
+.button-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.back-button {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 700;
+  color: #111;
+  background-color: #91F778;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  display: inline-block;
+  border: 2px solid #91F778;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  background-color: transparent;
+  color: #91F778;
+}
+
+/* Footer */
+footer {
+  background-color: #C5ADED;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: auto;
+}
