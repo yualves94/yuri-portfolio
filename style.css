@@ -74,12 +74,12 @@ nav a:hover {
 }
 
 .window-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: 500px;
-    margin-top: 100px;
-  }
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 100px;
+}
 
 .main-image {
   width: 100%;
@@ -107,7 +107,7 @@ nav a:hover {
 
 .window-text p {
   font-size: 20px;
-  font-weight: 400 !important;
+  font-weight: 400;
   line-height: 1.5;
 }
 
@@ -263,63 +263,63 @@ nav a:hover {
   font-weight: bold;
 }
 
-/* Timeline */
+/* Timeline Section */
 .project-timeline {
-    margin-top: 80px;
-    text-align: center;
-    position: relative;
-  }
-  
-  .timeline-title {
-    font-size: 28px;
-    color: #91F778;
-    margin-bottom: 40px;
-  }
-  
-  .timeline {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    margin: 60px auto;
-    max-width: 1000px;
-    padding: 40px 20px 0; /* top padding added */
-  }
-  
-  .timeline::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background-color: #91F778;
-    z-index: 0;
-  }
-  
-  .timeline-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .timeline-dot {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #C5ADED;
-    position: relative;
-    top: 0;
-  }
-  
-  .timeline-step span {
-    margin-top: 15px;
-    font-size: 16px;
-    color: #ccc;
-    font-weight: bold;
-  }
+  margin-top: 80px;
+  text-align: center;
+  position: relative;
+}
+
+.timeline-title {
+  font-size: 28px;
+  color: #91F778;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 60px auto;
+  max-width: 1000px;
+  padding: 40px 20px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #91F778;
+  z-index: 0;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #C5ADED;
+  position: relative;
+  top: 0;
+}
+
+.timeline-step span {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #ccc;
+  font-weight: bold;
+}
 
 /* Drawings and Iterations */
 .project-drawings {
@@ -399,13 +399,12 @@ footer p {
   font-size: 18px;
 }
 
-/* Responsive Adjustments for Tablets */
+/* Tablet (iPad) Only */
 @media (max-width: 1024px) {
   #main-content {
     flex-direction: column;
     align-items: center;
     padding-top: 60px;
-    position: relative;
   }
 
   .profile-container,
@@ -418,12 +417,18 @@ footer p {
     margin-bottom: 40px;
   }
 
-  .right-window {
-    margin-top: -30px;
+  .timeline {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .timeline-step span {
+    margin-top: 15px;
+    font-size: 15px;
   }
 }
 
-/* Responsive Adjustments for Mobile Devices */
+/* Mobile Only */
 @media (max-width: 768px) {
   .window-container {
     width: 90%;
@@ -459,6 +464,32 @@ footer p {
   .CSS-logo {
     width: 30px;
   }
+
+  .timeline {
+    flex-direction: column;
+    gap: 40px;
+    height: auto;
+  }
+
+  .timeline::before {
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-step {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .timeline-dot {
+    margin: 0;
+  }
+
+  .timeline-step span {
+    margin: 0;
+    font-size: 14px;
+  }
 }
-
-
