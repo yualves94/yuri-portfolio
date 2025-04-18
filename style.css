@@ -74,12 +74,12 @@ nav a:hover {
 }
 
 .window-container {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  max-width: 500px;
-  margin-top: 100px;
-}
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 100px;
+  }
 
 .main-image {
   width: 100%;
@@ -265,61 +265,61 @@ nav a:hover {
 
 /* Timeline */
 .project-timeline {
-  margin-top: 80px;
-  text-align: center;
-  position: relative;
-}
-
-.timeline-title {
-  font-size: 28px;
-  color: #91F778;
-  margin-bottom: 40px;
-}
-
-.timeline {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  margin: 60px auto;
-  max-width: 1000px;
-  padding: 40px 20px 0;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #91F778;
-  z-index: 0;
-}
-
-.timeline-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.timeline-dot {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #C5ADED;
-  position: relative;
-  top: 0;
-}
-
-.timeline-step span {
-  margin-top: 15px;
-  font-size: 16px;
-  color: #ccc;
-  font-weight: bold;
-}
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .timeline-title {
+    font-size: 28px;
+    color: #91F778;
+    margin-bottom: 40px;
+  }
+  
+  .timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 40px 20px 0; /* top padding added */
+  }
+  
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #91F778;
+    z-index: 0;
+  }
+  
+  .timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .timeline-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #C5ADED;
+    position: relative;
+    top: 0;
+  }
+  
+  .timeline-step span {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #ccc;
+    font-weight: bold;
+  }
 
 /* Drawings and Iterations */
 .project-drawings {
@@ -423,45 +423,8 @@ footer p {
   }
 }
 
-/* ✅ FIXED Timeline Responsive for Mobile Devices */
+/* Responsive Adjustments for Mobile Devices */
 @media (max-width: 768px) {
-  .timeline {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 40px;
-    max-width: 100%;
-    gap: 40px;
-  }
-
-  .timeline::before {
-    height: 4px;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: none;
-    width: 100%;
-  }
-
-  .timeline-step {
-    min-width: 200px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-  }
-
-  .timeline-dot {
-    margin-bottom: 10px;
-    top: 0;
-  }
-
-  .timeline-step span {
-    font-size: 14px;
-    margin-top: 0;
-    color: #ccc;
-  }
-
   .window-container {
     width: 90%;
     margin: 40px auto 60px;
@@ -497,3 +460,5 @@ footer p {
     width: 30px;
   }
 }
+
+
