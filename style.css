@@ -6,11 +6,13 @@ body {
   background-color: #111;
   color: #91F778;
   font-family: 'Source Code Pro', monospace;
+  text-align: center;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 /* Header */
@@ -23,11 +25,11 @@ header {
 nav ul {
   list-style: none;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
 }
 
 nav a {
@@ -36,6 +38,7 @@ nav a {
   text-decoration: none;
   font-size: 18px;
   padding: 10px 15px;
+  display: inline-block;
   border: 2px solid transparent;
   transition: all 0.3s ease-in-out;
 }
@@ -47,89 +50,337 @@ nav a:hover {
   background: rgba(145, 247, 120, 0.2);
 }
 
-/* Timeline Section */
-.project-timeline {
-  text-align: center;
-  padding: 60px 20px;
+/* Main Content Section */
+#main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-grow: 1;
 }
 
-.timeline-title {
-  font-size: 28px;
-  color: #91F778;
+.profile-container {
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.profile-pic {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.window-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 100px;
+  }
+
+.main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.window-text {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: black;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.window-text h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.window-text p {
+  font-size: 20px;
+  font-weight: 400 !important;
+  line-height: 1.5;
+}
+
+.right-window {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-window-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.right-image {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.right-window-text {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  color: black;
+}
+
+.skills-logos {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 180px;
+}
+
+.skill-logo {
+  width: 38px;
+  height: auto;
+}
+
+.HTML-logo,
+.CSS-logo {
+  position: absolute;
+  top: 75%;
+  width: 40px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.HTML-logo {
+  left: 35%;
+}
+
+.CSS-logo {
+  left: 65%;
+}
+
+/* Projects Section */
+#projects {
+  background-color: #111;
+  min-height: 100vh;
+  padding: 50px 20px;
+}
+
+.projects-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
   margin-bottom: 40px;
 }
 
-.timeline {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
+.project-subtitle {
+  font-size: 32px;
+  color: #91F778;
+  margin: 20px 0;
+}
+
+.project-image {
+  width: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  height: auto;
   margin: 0 auto;
-  padding: 40px 20px;
+  display: block;
+  border-radius: 12px;
 }
 
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #91F778;
-  z-index: 0;
-}
-
-.timeline-step {
-  flex: 1;
-  position: relative;
-  text-align: center;
-  z-index: 1;
-}
-
-.timeline-dot {
-  width: 30px;
-  height: 30px;
-  background-color: #C5ADED;
-  border-radius: 50%;
-  position: relative;
-  top: -15px;
-  margin: 0 auto 10px auto;
-}
-
-.timeline-step span {
-  font-size: 16px;
+.project-description {
   color: #ccc;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+  text-align: left;
+  padding: 0 20px;
 }
 
-/* Responsive Mobile Timeline */
-@media (max-width: 768px) {
+.project-description strong {
+  display: block;
+  margin-top: 20px;
+  color: #91F778;
+  font-weight: 700;
+}
+
+.project-challenge-goal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 60px auto 0 auto;
+  padding: 0 20px;
+}
+
+.project-block {
+  flex: 1 1 400px;
+  color: #ccc;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 500px;
+  text-align: left;
+}
+
+.project-block-title {
+  color: #91F778;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.project-block ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+.project-block ul li::before {
+  content: "> ";
+  color: #91F778;
+  font-weight: bold;
+}
+
+/* Timeline */
+.project-timeline {
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .timeline-title {
+    font-size: 28px;
+    color: #91F778;
+    margin-bottom: 40px;
+  }
+  
   .timeline {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 40px;
-    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 40px 20px 0; /* top padding added */
   }
-
+  
   .timeline::before {
-    top: 0;
-    bottom: 0;
-    left: 15px;
-    height: 100%;
-    width: 4px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #91F778;
+    z-index: 0;
   }
-
+  
   .timeline-step {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
-    text-align: left;
+    position: relative;
+    z-index: 1;
   }
-
+  
   .timeline-dot {
-    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #C5ADED;
+    position: relative;
     top: 0;
   }
+  
+  .timeline-step span {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #ccc;
+    font-weight: bold;
+  }
+
+/* Drawings and Iterations */
+.project-drawings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.drawing-block {
+  text-align: center;
+}
+
+.sketch-title {
+  color: #91F778;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sketch-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.full-width {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Caption */
+.sketch-caption {
+  font-size: 18px;
+  color: #ccc;
+  line-height: 1.6;
+  margin-top: 20px;
+  font-family: 'Source Code Pro', monospace;
+  text-align: left;
+}
+
+/* Usability & Iteration Specific Images */
+.usability-img {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.usability-img.horizontal-img {
+  width: auto;
+  height: 300px;
+}
+
+.usability-img.vertical-img {
+  height: auto;
+  max-height: 300px;
+  max-width: 100%;
 }
 
 /* Footer */
@@ -138,10 +389,76 @@ footer {
   color: black;
   padding: 20px;
   text-align: center;
-  margin-top: auto;
+  width: 100vw;
+  position: relative;
+  bottom: 0;
 }
 
 footer p {
   font-weight: 700;
   font-size: 18px;
 }
+
+/* Responsive Adjustments for Tablets */
+@media (max-width: 1024px) {
+  #main-content {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    position: relative;
+  }
+
+  .profile-container,
+  .right-window {
+    position: relative;
+    transform: none;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin-bottom: 40px;
+  }
+
+  .right-window {
+    margin-top: -30px;
+  }
+}
+
+/* Responsive Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+  .window-container {
+    width: 90%;
+    margin: 40px auto 60px;
+  }
+
+  .window-text {
+    font-size: 16px;
+    padding: 15px;
+    width: 90%;
+  }
+
+  .window-text h1 {
+    font-size: 24px;
+  }
+
+  .window-text p {
+    font-size: 16px;
+  }
+
+  .right-image {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .skills-logos {
+    max-width: 160px;
+    gap: 10px;
+  }
+
+  .skill-logo,
+  .HTML-logo,
+  .CSS-logo {
+    width: 30px;
+  }
+}
+
+
