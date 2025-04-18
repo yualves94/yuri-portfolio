@@ -285,6 +285,7 @@ nav a:hover {
   max-width: 1000px;
   padding: 0 20px;
   height: 60px;
+  overflow-x: visible;
 }
 
 .timeline::before {
@@ -312,14 +313,50 @@ nav a:hover {
   height: 30px;
   border-radius: 50%;
   background-color: #C5ADED;
+  position: relative;
+  top: -2px;
   z-index: 2;
 }
 
 .timeline-step span {
-  margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
   color: #ccc;
+  margin-top: 10px;
   white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    height: 100px;
+    padding-bottom: 20px;
+  }
+
+  .timeline-step {
+    min-width: 180px;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+  }
+
+  .timeline::before {
+    height: 4px;
+    top: 30px;
+  }
+
+  .timeline-dot {
+    width: 30px;
+    height: 30px;
+    top: 13px;
+  }
+
+  .timeline-step span {
+    font-size: 14px;
+    margin-top: 40px;
+  }
 }
 
 /* Drawings and Iterations */
@@ -459,17 +496,5 @@ footer p {
   .HTML-logo,
   .CSS-logo {
     width: 30px;
-  }
-
-  /* Fix timeline layout for mobile */
-  .timeline {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 20px 10px;
-  }
-
-  .timeline-step {
-    min-width: 140px;
-    flex-shrink: 0;
   }
 }
