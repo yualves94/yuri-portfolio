@@ -285,7 +285,6 @@ nav a:hover {
   max-width: 1000px;
   padding: 0 20px;
   height: 60px;
-  overflow-x: visible;
 }
 
 .timeline::before {
@@ -303,7 +302,6 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   position: relative;
   z-index: 1;
 }
@@ -314,48 +312,35 @@ nav a:hover {
   border-radius: 50%;
   background-color: #C5ADED;
   position: relative;
-  top: -2px;
-  z-index: 2;
+  top: -15px;
 }
 
 .timeline-step span {
-  font-size: 16px;
+  margin-top: 12px;
   color: #ccc;
-  margin-top: 10px;
-  white-space: nowrap;
 }
 
+/* Responsive Timeline for Mobile */
 @media (max-width: 768px) {
   .timeline {
-    display: flex;
-    flex-wrap: nowrap;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    height: 100px;
-    padding-bottom: 20px;
-  }
-
-  .timeline-step {
-    min-width: 180px;
-    flex: 0 0 auto;
-    scroll-snap-align: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 100px;
+    min-width: 600px;
   }
 
   .timeline::before {
-    height: 4px;
     top: 30px;
   }
 
   .timeline-dot {
-    width: 30px;
-    height: 30px;
-    top: 13px;
+    top: 0;
   }
 
-  .timeline-step span {
-    font-size: 14px;
-    margin-top: 40px;
+  .timeline-step {
+    min-width: 150px;
   }
 }
 
@@ -435,66 +420,4 @@ footer {
 footer p {
   font-weight: 700;
   font-size: 18px;
-}
-
-/* Responsive Adjustments for Tablets */
-@media (max-width: 1024px) {
-  #main-content {
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
-    position: relative;
-  }
-
-  .profile-container,
-  .right-window {
-    position: relative;
-    transform: none;
-    left: auto;
-    right: auto;
-    top: auto;
-    margin-bottom: 40px;
-  }
-
-  .right-window {
-    margin-top: -30px;
-  }
-}
-
-/* Responsive Adjustments for Mobile Devices */
-@media (max-width: 768px) {
-  .window-container {
-    width: 90%;
-    margin: 40px auto 60px;
-  }
-
-  .window-text {
-    font-size: 16px;
-    padding: 15px;
-    width: 90%;
-  }
-
-  .window-text h1 {
-    font-size: 24px;
-  }
-
-  .window-text p {
-    font-size: 16px;
-  }
-
-  .right-image {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .skills-logos {
-    max-width: 160px;
-    gap: 10px;
-  }
-
-  .skill-logo,
-  .HTML-logo,
-  .CSS-logo {
-    width: 30px;
-  }
 }
