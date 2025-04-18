@@ -436,7 +436,7 @@ footer p {
   .timeline::before {
     width: 4px;
     height: 100%;
-    left: 22px;
+    left: 25px;
     top: 0;
     right: auto;
   }
