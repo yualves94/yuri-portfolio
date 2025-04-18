@@ -107,7 +107,7 @@ nav a:hover {
 
 .window-text p {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 400 !important;
   line-height: 1.5;
 }
 
@@ -263,7 +263,7 @@ nav a:hover {
   font-weight: bold;
 }
 
-/* Timeline Section */
+/* Timeline */
 .project-timeline {
   margin-top: 80px;
   text-align: center;
@@ -399,12 +399,13 @@ footer p {
   font-size: 18px;
 }
 
-/* Tablet (iPad) Only */
+/* Responsive Adjustments for Tablets */
 @media (max-width: 1024px) {
   #main-content {
     flex-direction: column;
     align-items: center;
     padding-top: 60px;
+    position: relative;
   }
 
   .profile-container,
@@ -417,19 +418,50 @@ footer p {
     margin-bottom: 40px;
   }
 
-  .timeline {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .timeline-step span {
-    margin-top: 15px;
-    font-size: 15px;
+  .right-window {
+    margin-top: -30px;
   }
 }
 
-/* Mobile Only */
+/* ✅ FIXED Timeline Responsive for Mobile Devices */
 @media (max-width: 768px) {
+  .timeline {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 40px;
+    max-width: 100%;
+    gap: 40px;
+  }
+
+  .timeline::before {
+    height: 4px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+  }
+
+  .timeline-step {
+    min-width: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+  }
+
+  .timeline-dot {
+    margin-bottom: 10px;
+    top: 0;
+  }
+
+  .timeline-step span {
+    font-size: 14px;
+    margin-top: 0;
+    color: #ccc;
+  }
+
   .window-container {
     width: 90%;
     margin: 40px auto 60px;
@@ -463,33 +495,5 @@ footer p {
   .HTML-logo,
   .CSS-logo {
     width: 30px;
-  }
-
-  .timeline {
-    flex-direction: column;
-    gap: 40px;
-    height: auto;
-  }
-
-  .timeline::before {
-    width: 4px;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .timeline-step {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .timeline-dot {
-    margin: 0;
-  }
-
-  .timeline-step span {
-    margin: 0;
-    font-size: 14px;
   }
 }
