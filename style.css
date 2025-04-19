@@ -20,7 +20,7 @@ header {
   background-color: #C5ADED;
   padding: 20px;
   text-align: center;
-  width: 100vw; /* Garante o preenchimento total no topo */
+  width: 100vw; /* <- essa linha garante que o header ocupe toda a largura da tela */
 }
 
 nav ul {
@@ -75,12 +75,12 @@ nav a:hover {
 }
 
 .window-container {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  max-width: 500px;
-  margin-top: 100px;
-}
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 100px;
+  }
 
 .main-image {
   width: 100%;
@@ -266,61 +266,61 @@ nav a:hover {
 
 /* Timeline */
 .project-timeline {
-  margin-top: 80px;
-  text-align: center;
-  position: relative;
-}
-
-.timeline-title {
-  font-size: 28px;
-  color: #91F778;
-  margin-bottom: 40px;
-}
-
-.timeline {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  margin: 60px auto;
-  max-width: 1000px;
-  padding: 40px 20px 0;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #91F778;
-  z-index: 0;
-}
-
-.timeline-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.timeline-dot {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #C5ADED;
-  position: relative;
-  top: 0;
-}
-
-.timeline-step span {
-  margin-top: 15px;
-  font-size: 16px;
-  color: #ccc;
-  font-weight: bold;
-}
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .timeline-title {
+    font-size: 28px;
+    color: #91F778;
+    margin-bottom: 40px;
+  }
+  
+  .timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 40px 20px 0; /* top padding added */
+  }
+  
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #91F778;
+    z-index: 0;
+  }
+  
+  .timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .timeline-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #C5ADED;
+    position: relative;
+    top: 0;
+  }
+  
+  .timeline-step span {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #ccc;
+    font-weight: bold;
+  }
 
 /* Drawings and Iterations */
 .project-drawings {
@@ -357,6 +357,7 @@ nav a:hover {
   text-align: center;
 }
 
+/* Caption */
 .sketch-caption {
   font-size: 18px;
   color: #ccc;
@@ -423,47 +424,17 @@ footer p {
   }
 }
 
-/* ✅ Responsive Adjustments for Mobile Devices (Estabilizado) */
+/* Responsive Adjustments for Mobile Devices */
 @media (max-width: 768px) {
-  #main-content {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    position: relative;
-  }
-
-  .profile-container,
-  .right-window {
-    position: relative;
-    transform: none;
-    top: auto;
-    left: auto;
-    right: auto;
-    margin-bottom: 40px;
-    width: 100%;
-    max-width: 300px;
-  }
-
   .window-container {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto 60px;
-  }
-
-  .main-image,
-  .right-image {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    margin: 40px auto 60px;
   }
 
   .window-text {
-    position: absolute;
-    width: 90%;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 16px;
     padding: 15px;
+    width: 90%;
   }
 
   .window-text h1 {
@@ -472,6 +443,11 @@ footer p {
 
   .window-text p {
     font-size: 16px;
+  }
+
+  .right-image {
+    width: 100%;
+    max-width: 300px;
   }
 
   .skills-logos {
@@ -485,3 +461,5 @@ footer p {
     width: 30px;
   }
 }
+
+
