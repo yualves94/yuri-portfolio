@@ -20,6 +20,7 @@ header {
   background-color: #C5ADED;
   padding: 20px;
   text-align: center;
+  width: 100vw;
 }
 
 nav ul {
